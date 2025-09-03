@@ -1,0 +1,20 @@
+{
+   "name": " Meu Primeiro PWA ",
+    "short_name": " MeuPWA ",
+     "start_url": " index . html ",
+    "display": " standalone ",
+    "background_color": "# ffffff ",
+    "theme_color": " #2196 f3",
+    "icons": [
+    {
+     "src": " icons /icon -192. png ",
+    "sizes": " 192 x192 ",
+     "type": " image /png"
+     } ,
+     {
+     "src": " icons /icon -512. png ",
+     "sizes": " 512 x512 ",
+     "type": " image /png"
+     }
+     ]
+}
