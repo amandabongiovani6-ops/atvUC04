@@ -1,7 +1,7 @@
 {
    "name": " Meu Primeiro PWA ",
     "short_name": " MeuPWA ",
-     "start_url": " index . html ",
+     "start_url": "/atvUC04/index.html",
     "display": " standalone ",
     "background_color": "# ffffff ",
     "theme_color": " #2196 f3",
@@ -17,4 +17,5 @@
      "type": " image /png"
      }
      ]
+
 }
