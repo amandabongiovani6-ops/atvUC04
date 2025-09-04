@@ -7,10 +7,9 @@ const FILES_TO_CACHE = [
   "icons/icon-512.png",
   "icons/logo.jpg",
   "style.css",
-  "app.js" // caso tenha um JS principal
+
 ];
 
-// Instala e adiciona arquivos ao cache
 self.addEventListener("install", event => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
@@ -18,7 +17,7 @@ self.addEventListener("install", event => {
   self.skipWaiting();
 });
 
-// Ativa e limpa caches antigos
+
 self.addEventListener("activate", event => {
   event.waitUntil(
     caches.keys().then(keys =>
@@ -30,15 +29,15 @@ self.addEventListener("activate", event => {
   self.clients.claim();
 });
 
-// Intercepta requisições
+
 self.addEventListener("fetch", event => {
   if (event.request.mode === "navigate") {
-    // Para navegação, se offline, usa o index.html
+   
     event.respondWith(
       fetch(event.request).catch(() => caches.match("index.html"))
     );
   } else {
-    // Para outros requests, tenta cache primeiro, senão busca da rede
+
     event.respondWith(
       caches.match(event.request).then(resp => {
         return (
@@ -54,3 +53,4 @@ self.addEventListener("fetch", event => {
     );
   }
 });
+
